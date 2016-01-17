@@ -24,12 +24,16 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 
-gem 'dropbox-sdk'
 gem 'twilio-ruby'
-gem 'twitter'
+gem 'stripe'
+gem 'uber-ruby'
 gem 'yelp'
-# gem 'sentimentalizer'
+gem 'twitter'
+gem 'echowrap'
+gem 'rspotify'
 
+gem 'sentimental'
+gem 'geocoder'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

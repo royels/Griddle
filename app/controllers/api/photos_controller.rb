@@ -2,10 +2,6 @@ class Api::PhotosController < ApplicationController
   respond_to :json
 
   def index
-    # @photos =  Photo.all
-    # respond_to do |format|
-    #   format.json { render :json => @photos }
-    # end
     @photos = Photo.all
     respond_with @photos
   end

@@ -1,4 +1,4 @@
-h1 Find me in index.slim and edit me uppppp
+= render "home/header"
+  a
+    = link_to "Logout", destroy_user_session_path, method: :delete
 #application-container
-a
-  = link_to "Logout", destroy_user_session_path, method: :delete

@@ -78,8 +78,10 @@ GEM
     diff-lcs (1.2.5)
     domain_name (0.5.24)
       unf (>= 0.0.5, < 1.0.0)
-    dropbox-sdk (1.6.5)
-      json
+    echowrap (0.2.0)
+      faraday (~> 0.9)
+      multi_json (~> 1.0)
+      simple_oauth (~> 0.2)
     ejs (1.1.1)
     equalizer (0.0.10)
     erubis (2.7.0)
@@ -93,6 +95,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.10.0)
       faraday (>= 0.7.4, < 0.10)
+    geocoder (1.2.11)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hashie (3.4.2)
@@ -131,20 +134,31 @@ GEM
     mini_portile (0.6.2)
     minitest (5.8.0)
     multi_json (1.11.2)
+    multi_xml (0.5.5)
     multipart-post (2.0.0)
     naught (1.1.0)
     neat (1.7.2)
       bourbon (>= 4.0)
       sass (>= 3.3)
+    netrc (0.10.3)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     oauth (0.4.7)
+    oauth2 (1.0.0)
+      faraday (>= 0.8, < 0.10)
+      jwt (~> 1.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (~> 1.2)
     omniauth (1.2.2)
       hashie (>= 1.2, < 4)
       rack (~> 1.0)
     omniauth-oauth (1.1.0)
       oauth
       omniauth (~> 1.0)
+    omniauth-oauth2 (1.3.1)
+      oauth2 (~> 1.0)
+      omniauth (~> 1.2)
     omniauth-twitter (1.2.1)
       json (~> 1.3)
       omniauth-oauth (~> 1.1)
@@ -186,6 +200,10 @@ GEM
       json (~> 1.4)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
+    rest-client (1.8.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     rspec-core (3.3.2)
       rspec-support (~> 3.3.0)
     rspec-expectations (3.3.1)
@@ -203,6 +221,9 @@ GEM
       rspec-mocks (~> 3.3.0)
       rspec-support (~> 3.3.0)
     rspec-support (3.3.0)
+    rspotify (1.15.3)
+      omniauth-oauth2 (~> 1.1)
+      rest-client (~> 1.7)
     sass (3.4.18)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -213,6 +234,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    sentimental (1.0.3)
     simple_oauth (0.3.1)
     slim (3.0.6)
       temple (~> 0.7.3)
@@ -231,6 +253,9 @@ GEM
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
     sqlite3 (1.3.10)
+    stripe (1.29.1)
+      json (~> 1.8.1)
+      rest-client (~> 1.4)
     temple (0.7.6)
     thor (0.19.1)
     thread_safe (0.3.5)
@@ -254,6 +279,9 @@ GEM
       simple_oauth (~> 0.3.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    uber-ruby (0.4.0)
+      faraday (~> 0.9.0)
+      json (~> 1.8)
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
@@ -285,9 +313,10 @@ DEPENDENCIES
   capybara
   coffee-rails
   devise
-  dropbox-sdk
+  echowrap
   factory_girl
   factory_girl_rails
+  geocoder
   jquery-rails
   konacha
   marionette-rails
@@ -298,14 +327,18 @@ DEPENDENCIES
   rails-backbone
   responders
   rspec-rails
+  rspotify
   sass-rails
   sdoc (~> 0.4.0)
+  sentimental
   slim-rails
   spring
   sqlite3
+  stripe
   turbolinks
   twilio-ruby
   twitter
+  uber-ruby
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
   yelp
